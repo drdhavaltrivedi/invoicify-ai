@@ -1,0 +1,6 @@
+{
+  "name": "Invoicify AI",
+  "description": "Intelligent invoice processing webapp. Upload invoices to get summaries, structured text, and downloadable JSON data using Gemini AI.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

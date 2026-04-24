@@ -1,0 +1,13 @@
+# Invoicify AI
+
+Invoicify AI is a neural-powered invoice processing hub that utilizes Google Gemini 1.5 Flash to extract metadata from PDF and image invoices.
+
+## Key Features
+- **Neural Extraction**: Automated identification of merchants, dates, amounts, and line items using Gemini 1.5 Flash.
+- **Real-time Processing**: Fast document ingestion via secure memory buffers.
+- **Global Audit**: Multi-currency support with IP-based localization and real-time exchange rates.
+- **Privacy-First**: No document storage on servers; all data persists in local storage.
+
+## Documentation
+- **Main Workspace**: [Invoicify.brilworks.com](https://Invoicify.brilworks.com/)
+- **User Guide**: [Invoicify.brilworks.com/docs](https://Invoicify.brilworks.com/docs)
