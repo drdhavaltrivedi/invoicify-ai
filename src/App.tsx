@@ -559,14 +559,6 @@ function Workspace() {
              <Info className="w-4 h-4" />
              <span className="hidden sm:inline">Docs</span>
            </Link>
-           <button 
-             onClick={() => setShowVendorModal(true)}
-             className="px-3 sm:px-4 py-2 bg-slate-50 border border-slate-100 rounded-xl text-[10px] font-black uppercase tracking-widest text-slate-400 hover:text-brand hover:border-brand/20 transition-all flex items-center gap-2 shrink-0 shadow-sm"
-             title="Vendor Management: Store and manage frequent vendor metadata"
-           >
-             <Users className="w-4 h-4" />
-             <span className="hidden sm:inline">Vendors</span>
-           </button>
            <div className="h-8 w-[1px] bg-slate-100 hidden sm:block mx-1"></div>
            <button 
              onClick={() => setShowSettings(!showSettings)}
@@ -1054,27 +1046,6 @@ function Workspace() {
                       </div>
                     </div>
                     <div className="flex gap-2">
-                       <button 
-                         onClick={() => {
-                           const vendor: Vendor = {
-                             id: Math.random().toString(36).substring(7),
-                             name: selectedInvoice.structured_data.merchant.name,
-                             email: selectedInvoice.structured_data.merchant.email || '',
-                             address: selectedInvoice.structured_data.merchant.address || '',
-                             category: selectedInvoice.category || ''
-                           };
-                           if (vendors.find(v => v.name.toLowerCase() === vendor.name.toLowerCase())) {
-                             alert("Vendor already exists in your management database.");
-                           } else {
-                             setVendors(prev => [...prev, vendor]);
-                             alert("Vendor profiles updated successfully.");
-                           }
-                         }}
-                         className="p-2 text-slate-300 hover:text-brand transition-colors"
-                         title="Neural Save: Cache this merchant's profile for future auto-population"
-                       >
-                         <Users className="w-5 h-5" />
-                       </button>
                        <button 
                         onClick={() => deleteInvoice(selectedInvoice.id)}
                         className="p-2 text-slate-300 hover:text-red-500 transition-colors"
