@@ -713,25 +713,26 @@ function Workspace() {
         </motion.div>
       )}
 
-      <main className="max-w-7xl mx-auto w-full p-4 sm:p-8 grid grid-cols-12 gap-6 sm:gap-8 flex-1 items-start">
+      <main className="max-w-7xl mx-auto w-full p-4 sm:p-8 grid grid-cols-12 gap-6 sm:gap-8 flex-1 items-stretch">
         {/* Left Column: List & Totals */}
         <div className="col-span-12 lg:col-span-4 flex flex-col gap-6">
           <div 
             {...getRootProps()} 
             className={cn(
-              "relative group overflow-hidden bg-white p-10 border-2 border-dashed rounded-[2.5rem] flex flex-col items-center justify-center text-center transition-all duration-700 cursor-pointer shadow-2xl shadow-brand/5 border-slate-100",
+              "relative group overflow-hidden bg-white p-8 sm:p-10 border-2 border-dashed rounded-[2.5rem] flex flex-col items-center justify-center text-center transition-all duration-700 cursor-pointer shadow-2xl shadow-brand/5 border-slate-100",
               isDragActive ? "border-brand bg-brand/5 scale-[0.98]" : "hover:border-brand/40 hover:scale-[1.01]"
             )}
           >
+            <div className="absolute inset-0 opacity-[0.015] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#4f46e5 0.5px, transparent 0.5px)', backgroundSize: '20px 20px' }} />
             <input {...getInputProps()} />
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(79,70,229,0.04),transparent)] pointer-events-none" />
-            <div className="w-20 h-20 bg-brand/5 rounded-3xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-700">
-               <div className="w-14 h-14 bg-brand rounded-2xl flex items-center justify-center shadow-lg shadow-brand/30">
-                 <Upload className="w-7 h-7 text-white" />
+            <div className="w-16 h-16 sm:w-20 sm:h-20 bg-brand/5 rounded-3xl flex items-center justify-center mb-6 group-hover:scale-110 group-hover:rotate-6 transition-all duration-700">
+               <div className="w-12 h-12 sm:w-14 sm:h-14 bg-brand rounded-2xl flex items-center justify-center shadow-lg shadow-brand/30">
+                 <Upload className="w-6 h-6 sm:w-7 h-7 text-white" />
                </div>
             </div>
-            <h2 className="text-xl font-black text-slate-900 tracking-tight">Drag & Drop Invoices</h2>
-            <p className="text-xs text-slate-400 mt-3 font-medium max-w-[200px] leading-relaxed">Securely ingest PDF, PNG, or JPG document streams or click to browse.</p>
+            <h2 className="text-lg sm:text-xl font-black text-slate-900 tracking-tight">Drag & Drop Invoices</h2>
+            <p className="text-[10px] sm:text-xs text-slate-400 mt-3 font-medium max-w-[200px] leading-relaxed">Securely ingest PDF, PNG, or JPG document streams or click to browse.</p>
             <div 
               className="mt-8 px-6 py-2.5 bg-brand text-white rounded-full text-[10px] font-black uppercase tracking-widest opacity-0 group-hover:opacity-100 translate-y-2 group-hover:translate-y-0 transition-all duration-500"
               title="Initiate neural scanning and data extraction sequence"
@@ -784,7 +785,7 @@ function Workspace() {
                                    {totalInUserCurrency.toLocaleString(undefined, { minimumFractionDigits: 2, maximumFractionDigits: 2 })}
                                  </span>
                                  <span className="text-xs font-black text-brand/40 uppercase">{userCurrency}</span>
-                               </div>
+                                </div>
                                <p className="text-[8px] font-medium text-slate-500 mt-2 leading-tight">
                                  Neural conversion based on your geo-location. Rates are fetched in real-time for maximum audit precision.
                                </p>
@@ -822,8 +823,9 @@ function Workspace() {
              </motion.div>
           )}
 
-          <div className="bg-white rounded-[2.5rem] border border-slate-100 shadow-sm overflow-hidden min-h-[400px]">
-             <div className="p-6 border-b border-slate-50 flex items-center justify-between bg-slate-50/50">
+          <div className="bg-white rounded-[2.5rem] border border-slate-100 shadow-sm overflow-hidden flex flex-col flex-1 relative min-h-[300px]">
+             <div className="absolute inset-0 opacity-[0.01] pointer-events-none" style={{ backgroundImage: 'radial-gradient(#4f46e5 0.5px, transparent 0.5px)', backgroundSize: '24px 24px' }} />
+             <div className="p-6 border-b border-slate-50 flex items-center justify-between bg-slate-50/50 relative z-10">
                 <div className="flex items-center gap-2">
                    <div className="w-1.5 h-1.5 bg-brand rounded-full animate-pulse" />
                    <h4 className="text-[10px] font-black uppercase tracking-[0.2em] text-slate-400">Stream Buffer</h4>
